@@ -39,9 +39,9 @@ function Walker() {
   this.y = random(100, 600);
 
   this.display = function() {
-    //image (rug, this.x, this.y);
-    //color c = rug.get(int(x), int(y));
-    //stroke(c);
+var col = rug.get(this.x-30, this.y);
+    stroke(col);
+    strokeWeight(1);
     stroke(255);
     point(this.x, this.y);
   };
