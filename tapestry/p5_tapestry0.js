@@ -1,15 +1,15 @@
 let rug;
-function preload(){
+function preload() {
   rug = loadImage("data/rug.jpg");
 }
 
 let walkers = [];
-var walkerCount = 100;
+var walkerCount = 800;
 
 function setup() {
-  createCanvas(600, 800);
-  background(0);
-
+  createCanvas(windowWidth, windowHeight);
+  background(120);
+  imageMode (CENTER);
   for (let i = 0; i < walkerCount; i++) {
     walkers[i] = new Walker();
   }
@@ -22,7 +22,11 @@ function setup() {
     line (l, 0, l, height);
     l = l +6;
   }
+
+  //This controls the speed of the sketch
+  // frameRate(30);
 }
+
 
 
 function draw() {
@@ -30,24 +34,22 @@ function draw() {
     walkers[i].display();
     walkers[i].move();
   }
+  //image (rug, windowWidth/2, windowHeight/2);
 }
 
 
 
 function Walker() {
-  this.x = 15;
-  this.y = random(100, 600);
-
+  this.x = random(0,30); // starting position of the threads on the x axis
+  this.y = random(800); // starting position of the threads on the y axis
   this.display = function() {
-var col = rug.get(this.x-30, this.y);
+    var col = rug.get(this.x-30, this.y);
     stroke(col);
     strokeWeight(1);
-    stroke(255);
     point(this.x, this.y);
   };
 
   this.move = function() {
-
     var r = random(1);
     if (r < 0.5) {
       this.x++;
@@ -57,8 +59,8 @@ var col = rug.get(this.x-30, this.y);
       this.y--;
     }
     // this if statement makes the random walker stop moving
-    if (this.x > 550) {
-      this.x = 550;
+    if (this.x > windowWidth) {
+      this.x = windowWidth;
     }
   };
 }
