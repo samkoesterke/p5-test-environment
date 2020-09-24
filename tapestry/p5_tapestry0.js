@@ -1,6 +1,6 @@
 let rug;
 function preload() {
-  rug = loadImage("data/rug.jpg");
+  rug = loadImage("data/rug1.jpg");
 }
 
 let walkers = [];
