@@ -1,10 +1,10 @@
 let rug;
 function preload() {
-  rug = loadImage("data/rug12.png");
+  rug = loadImage("data/trialrug1.png");
 }
 
 let walkers = [];
-var walkerCount = 800;
+var walkerCount = 1000;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -24,26 +24,23 @@ function setup() {
   }
 
   //This controls the speed of the sketch
-  // frameRate(30);
+   frameRate(20);
 }
-
 
 
 function draw() {
-  for (let i = 0; i < walkerCount; i++) {
-    walkers[i].display();
-    walkers[i].move();
-  }
-  //image (rug, windowWidth/2, windowHeight/2);
+    for (let i = 0; i < walkerCount; i++) {
+      walkers[i].display();
+      walkers[i].move();
+    }
 }
 
 
-
 function Walker() {
-  this.x = random(0,30); // starting position of the threads on the x axis
+  this.x = random(100, 150); // starting position of the threads on the x axis
   this.y = random(800); // starting position of the threads on the y axis
   this.display = function() {
-    var col = rug.get(this.x-30, this.y);
+    var col = rug.get(this.x-200, this.y);
     stroke(col);
     strokeWeight(1);
     point(this.x, this.y);
