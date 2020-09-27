@@ -11,7 +11,7 @@ let mode;
 
 let walkers = [];
 let walkerCount = 2000;
-
+let randImg;
 
 let images = [];
 function preload() {
@@ -43,7 +43,7 @@ function setup() {
   }
 
 
-  //var randImg = floor(random(0, 3));
+  randImg = floor(random(0, 3));
   //image(images[randImg], 500, 500);
 
   //This controls the speed of the sketch
@@ -125,7 +125,7 @@ class Walker {
   }
 
   show() {
-    var randImg = floor(random(3));
+    //var randImg = floor(random(3));
     var col = images[randImg].get(this.x-400, this.y-20);
     stroke(col);
     strokeWeight(1);
