@@ -125,7 +125,7 @@ class Walker {
   }
 
   show() {
-    var randImg = floor(random(0,3));
+    var randImg = floor(random(3));
     var col = images[randImg].get(this.x-400, this.y-20);
     stroke(col);
     strokeWeight(1);
