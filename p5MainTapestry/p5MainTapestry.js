@@ -10,13 +10,13 @@ let mode;
 
 
 let walkers = [];
-let walkerCount = 2000;
+let walkerCount = 2500;
 let randImg;
 
 let images = [];
 function preload() {
-  for (let i = 0; i < 3; i++) {
-    images[i] = loadImage('data/trialrug'+i+'.png');
+  for (let i = 0; i < 4; i++) {
+    images[i] = loadImage('data/rug'+i+'.png');
   }
 }
 
@@ -43,7 +43,7 @@ function setup() {
   }
 
 
-  randImg = floor(random(0, 3));
+  randImg = floor(random(0, 4));
   //image(images[randImg], 500, 500);
 
   //This controls the speed of the sketch
@@ -105,7 +105,7 @@ function keyPressed() {
 
 class Walker {
   constructor() {
-    this.x = 400; //random(350, 400); // starting position of the threads on the x axis
+    this.x = random(300, 460); // starting position of the threads on the x axis
     this.y = random(800); // starting position of the threads on the y axis
   }
 
@@ -132,9 +132,3 @@ class Walker {
     point(this.x, this.y);
   }
 } 
-
-
-
-
-
-
