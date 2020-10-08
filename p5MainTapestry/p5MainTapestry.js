@@ -43,7 +43,7 @@ function setup() {
   }
 
   //Thanks to Karen for the help
-  randImg = floor(random(0, 4));
+  randImg = floor(random(0, 5));
 
   //This controls the speed of the sketch
   frameRate(120);
