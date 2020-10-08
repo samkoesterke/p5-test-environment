@@ -16,7 +16,7 @@ let randImg;
 
 let images = [];
 function preload() {
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 5; i++) {
     images[i] = loadImage('data/rug'+i+'.png');
   }
 }
